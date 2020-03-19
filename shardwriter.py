@@ -30,8 +30,8 @@ def get_db_connection(ip_address):
     if ip_address in db_connections:
         return db_connections[ip_address]
     else:
-        db_user = os.get_environ("DB_USER")
-        db_pass = os.get_environ("DB_PASSWORD")
+        db_user = os.getenv("DB_USER")
+        db_pass = os.getenv("DB_PASSWORD")
         db = sqlalchemy.create_engine(
             # Equivalent URL:
             # mysql+pymysql://<db_user>:<db_pass>@/<db_name>?unix_socket=/cloudsql/<cloud_sql_instance_name>
